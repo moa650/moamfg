@@ -12,23 +12,43 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center text-center min-h-[80vh] px-6 border-b border-border">
-        <div className="max-w-3xl space-y-6">
-          <p className="text-xs font-mono tracking-[0.3em] uppercase text-muted-foreground">
-            Mechanical Original Art
-          </p>
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight leading-none">
-            MOA
+      <section className="flex flex-col items-center justify-center text-center min-h-[90svh] px-4 sm:px-6 border-b border-border">
+        <div className="max-w-2xl w-full space-y-6 py-16">
+          <h1 className="text-6xl sm:text-8xl font-bold tracking-tight leading-none">
+            WELCOME
           </h1>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            Documenting the frontier of robotics, embodied AI, and mechanical design.
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+            MOA is an R&D project inspired by research at some of the top robotics
+            programs in the world. Coincidentally, the Moa is also a (temporarily)
+            extinct bipedal land animal native to New Zealand; believed to be hunted
+            to extinction by the{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/M%C4%81ori_people"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline underline-offset-2"
+            >
+              Māori
+            </a>
+            , and to a lesser degree the{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/Haast%27s_eagle"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline underline-offset-2"
+            >
+              Haast&apos;s Eagle
+            </a>
+            , over five centuries ago.
           </p>
-          <div className="flex gap-3 justify-center">
-            <Button asChild>
-              <Link href="/news">Read the Blog</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/about">About</Link>
+          <p className="text-muted-foreground italic">Hold my beer.</p>
+          <div className="flex justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-black border border-black hover:bg-gray-100"
+            >
+              <Link href="#contact">Contact Now</Link>
             </Button>
           </div>
         </div>
@@ -36,8 +56,8 @@ export default function HomePage() {
 
       {/* Recent Posts */}
       {recentPosts.length > 0 && (
-        <section className="max-w-5xl mx-auto px-6 py-20">
-          <div className="flex items-center justify-between mb-8">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+          <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold">Recent Posts</h2>
             <Link
               href="/news"
@@ -57,10 +77,10 @@ export default function HomePage() {
       <Separator />
 
       {/* Subscribe */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
         <div className="max-w-lg">
           <h2 className="text-xl font-semibold mb-2">Stay in the loop</h2>
-          <p className="text-sm text-muted-foreground mb-6">
+          <p className="text-sm text-muted-foreground mb-5">
             Get notified when new posts go up. No spam, unsubscribe any time.
           </p>
           <SubscribeForm />
@@ -70,11 +90,11 @@ export default function HomePage() {
       <Separator />
 
       {/* Contact */}
-      <section id="contact" className="max-w-5xl mx-auto px-6 py-20">
+      <section id="contact" className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
         <div className="max-w-lg">
           <h2 className="text-xl font-semibold mb-2">Get in touch</h2>
-          <p className="text-sm text-muted-foreground mb-6">
-            Questions, collaborations, or just want to talk robots — reach out.
+          <p className="text-sm text-muted-foreground mb-5">
+            Questions, collaborations — reach out.
           </p>
           <ContactForm />
         </div>

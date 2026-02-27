@@ -2,28 +2,30 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About | MOA",
-  description: "About Mechanical Original Art — who we are and what we do.",
+  description: "About MOA — a bipedal robotics R&D project.",
 }
 
 export default function AboutPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-20">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
       <h1 className="text-4xl font-bold mb-8">About MOA</h1>
-      <div className="prose prose-invert prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
+      <div className="space-y-6 text-muted-foreground leading-relaxed">
         <p>
-          Mechanical Original Art (MOA) is an independent project focused on documenting
-          and discussing the rapidly evolving world of robotics, embodied AI, and
-          mechanical design.
+          MOA is a bipedal robotics R&D project — named after the{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Moa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 underline underline-offset-2"
+          >
+            Moa
+          </a>
+          , an extinct flightless bird native to New Zealand.
         </p>
         <p>
-          We track developments from leading robotics labs and companies — Boston Dynamics,
-          Agility Robotics, Figure, NVIDIA, and others — and share news, analysis,
-          and commentary for enthusiasts, engineers, and curious minds.
-        </p>
-        <p>
-          The name reflects a belief that machines in motion are a form of art — that
-          there is something genuinely beautiful in watching a legged robot navigate
-          rough terrain or a manipulator learn a new skill.
+          The project tracks developments from leading robotics labs and companies —
+          Boston Dynamics, Agility Robotics, Figure, NVIDIA, and others — and shares
+          news, analysis, and commentary for engineers and curious minds.
         </p>
       </div>
     </div>

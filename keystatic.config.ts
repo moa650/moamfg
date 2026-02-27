@@ -1,17 +1,11 @@
 import { config, collection, fields } from "@keystatic/core"
 
-const hasGithubCreds = !!(
-  process.env.KEYSTATIC_GITHUB_CLIENT_ID &&
-  process.env.KEYSTATIC_GITHUB_CLIENT_SECRET &&
-  process.env.KEYSTATIC_SECRET
-)
-
 export default config({
-  storage: hasGithubCreds
+  storage: process.env.NODE_ENV === "production"
     ? {
         kind: "github",
         repo: {
-          owner: process.env.NEXT_PUBLIC_GITHUB_OWNER ?? "moa650",
+          owner: "moa650",
           name: "moamfg",
         },
       }

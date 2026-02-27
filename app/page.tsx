@@ -2,7 +2,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import ContactForm from "@/components/contact-form"
-import SubscribeForm from "@/components/subscribe-form"
 import PostCard from "@/components/blog/post-card"
 import { getAllPosts } from "@/lib/posts"
 
@@ -74,18 +73,6 @@ export default function HomePage() {
         </section>
       )}
 
-      <Separator />
-
-      {/* Subscribe */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-        <div className="max-w-lg">
-          <h2 className="text-xl font-semibold mb-2">Stay in the loop</h2>
-          <p className="text-sm text-muted-foreground mb-5">
-            Get notified when new posts go up. No spam, unsubscribe any time.
-          </p>
-          <SubscribeForm />
-        </div>
-      </section>
 
       <Separator />
 

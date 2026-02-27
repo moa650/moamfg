@@ -11,7 +11,7 @@ export default config({
     ? {
         kind: "github",
         repo: {
-          owner: process.env.NEXT_PUBLIC_GITHUB_OWNER ?? "mrossi650",
+          owner: process.env.NEXT_PUBLIC_GITHUB_OWNER ?? "moa650",
           name: "moamfg",
         },
       }

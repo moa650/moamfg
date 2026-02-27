@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
-import { Resend } from "resend"
+import nodemailer from "nodemailer"
 
 export async function POST(request: NextRequest) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const { name, email, message } = await request.json()
 
@@ -10,8 +9,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 })
     }
 
-    await resend.emails.send({
-      from: "MOA Contact <noreply@moamfg.com>",
+    const transporter = nodemailer.createTransport({
+      host: "smtp.migadu.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    })
+
+    await transporter.sendMail({
+      from: `"MOA Contact" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL ?? "mike@moamfg.com",
       replyTo: email,
       subject: `New message from ${name}`,

@@ -15,7 +15,17 @@
       "Bash(npm run:*)",
       "Bash(node:*)",
       "Bash(git:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(npm show:*)",
+      "Bash(vercel link:*)",
+      "Bash(vercel env:*)",
+      "WebFetch(domain:keystatic.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:egghead.io)",
+      "WebFetch(domain:makerkit.dev)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:vedantbhagwat.com)",
+      "Bash(vercel logs:*)"
     ]
   }
 }

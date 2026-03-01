@@ -8,6 +8,7 @@ export default config({
           owner: "moa650",
           name: "moamfg",
         },
+        githubAppSlug: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG!,
       }
     : { kind: "local" },
   ui: {

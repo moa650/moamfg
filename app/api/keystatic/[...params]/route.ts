@@ -25,7 +25,13 @@ const handler = makeRouteHandler({
 })
 
 export async function GET(request: Request) {
-  return handler.GET(rewriteUrl(request))
+  const rewritten = rewriteUrl(request)
+  console.log("[keystatic] GET", new URL(rewritten.url).pathname, "host:", new URL(rewritten.url).host)
+  const response = await handler.GET(rewritten)
+  if (new URL(rewritten.url).pathname.includes("oauth/callback")) {
+    console.log("[keystatic] callback response status:", response.status)
+  }
+  return response
 }
 
 export async function POST(request: Request) {

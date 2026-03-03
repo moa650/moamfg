@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { MDXRemote } from "next-mdx-remote/rsc"
 import { Tweet } from "react-tweet"
 import YouTube from "@/components/youtube"
+import LinkedIn from "@/components/linkedin"
 import { getAllPosts, getPost } from "@/lib/posts"
 
 type Props = { params: Promise<{ slug: string }> }
@@ -45,7 +46,7 @@ export default async function PostPage({ params }: Props) {
         )}
       </header>
       <div className="prose prose-invert prose-lg max-w-none">
-        <MDXRemote source={post.content} components={{ Tweet, YouTube }} />
+        <MDXRemote source={post.content} components={{ Tweet, YouTube, LinkedIn }} />
       </div>
     </article>
   )

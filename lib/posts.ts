@@ -23,10 +23,14 @@ export function getAllPosts(): PostMeta[] {
       const slug = filename.replace(/\.mdx$/, "")
       const raw = fs.readFileSync(path.join(postsDir, filename), "utf8")
       const { data } = matter(raw)
+      const rawDate = data.publishedDate
+      const publishedDate = rawDate instanceof Date
+        ? rawDate.toISOString().slice(0, 10)
+        : (rawDate ?? "")
       return {
         slug,
         title: data.title ?? slug,
-        publishedDate: data.publishedDate ?? "",
+        publishedDate,
         excerpt: data.excerpt ?? "",
       }
     })
@@ -38,10 +42,14 @@ export function getPost(slug: string): Post | null {
   if (!fs.existsSync(filepath)) return null
   const raw = fs.readFileSync(filepath, "utf8")
   const { data, content } = matter(raw)
+  const rawDate = data.publishedDate
+  const publishedDate = rawDate instanceof Date
+    ? rawDate.toISOString().slice(0, 10)
+    : (rawDate ?? "")
   return {
     slug,
     title: data.title ?? slug,
-    publishedDate: data.publishedDate ?? "",
+    publishedDate,
     excerpt: data.excerpt ?? "",
     content,
   }

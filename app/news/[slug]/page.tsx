@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { MDXRemote } from "next-mdx-remote/rsc"
-import { Tweet } from "react-tweet"
+import Tweet from "@/components/tweet"
 import YouTube from "@/components/youtube"
 import LinkedIn from "@/components/linkedin"
 import { getAllPosts, getPost } from "@/lib/posts"
